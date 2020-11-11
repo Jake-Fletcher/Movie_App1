@@ -1,3 +1,4 @@
+import MovieReviewPage from "./pages/movieReviewPage";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
+          <Route path="/reviews/:id" component={MovieReviewPage} />
         </Switch>
       </div>
     </div>
