@@ -11,13 +11,14 @@ const reducer = (state, action) => {
           m.id === action.payload.movie.id ? { ...m, favorite: true } : m
         ),
       };
-    case "load":
-      return { movies: action.payload.movies };
-    case "add-review":
-      // Completed in next section
-      break;
-    default:
-      return state;
+      case "add-review":
+        return {
+          movies: state.movies.map((m) =>
+            m.id === action.payload.movie.id
+              ? { ...m, review: action.payload.review }
+              : m
+          ),
+        };
   }
 };
 
